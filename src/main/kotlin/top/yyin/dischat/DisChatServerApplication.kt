@@ -1,6 +1,8 @@
-package com.example.qiniutest
+package top.yyin.dischat
 
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
 import org.springframework.boot.runApplication
 
 @SpringBootApplication

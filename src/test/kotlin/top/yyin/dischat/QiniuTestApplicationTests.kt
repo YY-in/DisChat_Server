@@ -2,6 +2,7 @@ package com.example.qiniutest
 
 import com.example.qiniutest.service.QiniuCloudService
 import com.example.qiniutest.service.QiniuCloudServiceImpl
+import org.apache.el.parser.Token
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -29,5 +30,10 @@ class QiniuTestApplicationTests {
         println("操作结果$ret")
     }
 
+    @Test
+    fun getToken(){
+        val  token =  qiniuCloudService.getUploadToken()
+        println("获取的token：${token}")
+    }
 
 }
