@@ -1,4 +1,4 @@
-package com.example.qiniutest.service
+package top.yyin.dischat.service
 
 import com.qiniu.common.QiniuException
 import com.qiniu.http.Response

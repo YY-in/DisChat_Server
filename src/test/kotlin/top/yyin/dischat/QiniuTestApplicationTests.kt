@@ -1,7 +1,7 @@
-package com.example.qiniutest
+package top.yyin.dischat
 
-import com.example.qiniutest.service.QiniuCloudService
-import com.example.qiniutest.service.QiniuCloudServiceImpl
+import top.yyin.dischat.service.QiniuCloudService
+import top.yyin.dischat.service.QiniuCloudServiceImpl
 import org.apache.el.parser.Token
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired

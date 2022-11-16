@@ -11,11 +11,12 @@ import top.yyin.dischat.domain.user.UserPrivate
  * @Date: Created in 20:18 2022/11/9
  */
 @Repository
-interface UserPrivateRepository: MongoRepository<UserPrivate,ObjectId> {
+interface UserPrivateRepository : MongoRepository<UserPrivate,ObjectId> {
     // 查询并返回用户信息
     fun findUserPrivateByUsername(username: String): UserPrivate
-    fun findUserPrivateByEmail(email: String): UserPrivate
-    fun findUserPrivateByPhone(phone: String): UserPrivate
+    fun findUserPrivatesByEmail(email: String): UserPrivate
+    fun findUserPrivatesByPhone(phone: String): UserPrivate
 
+    fun existsByPhoneOrEmail(phone: String?, email: String?): Boolean
 
 }

@@ -1,4 +1,4 @@
-package com.example.qiniutest.configuration
+package top.yyin.dischat.configuration
 
 import com.qiniu.storage.BucketManager
 import org.springframework.beans.factory.annotation.Value
