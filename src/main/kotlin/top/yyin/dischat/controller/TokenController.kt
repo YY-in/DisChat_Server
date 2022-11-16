@@ -1,10 +1,9 @@
-package com.example.qiniutest.controller
+package top.yyin.dischat.controller
 
-import com.example.qiniutest.domain.Token
-import com.example.qiniutest.service.QiniuCloudServiceImpl
+import top.yyin.dischat.domain.security.token.ImageToken
+import top.yyin.dischat.service.QiniuCloudServiceImpl
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
-import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RestController
 
 /**
@@ -18,8 +17,8 @@ class TokenController {
     lateinit var qiniuCloudService: QiniuCloudServiceImpl
 
     @GetMapping("/imageToken")
-    fun getImageUploadToken(): Token {
-        return Token(upload_token = qiniuCloudService.getUploadToken())
+    fun getImageUploadToken(): ImageToken {
+        return ImageToken(upload_token = qiniuCloudService.getUploadToken())
     }
 
 }

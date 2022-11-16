@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration
 import org.springframework.boot.runApplication
 
 @SpringBootApplication
-class QiniuTestApplication
+class DisChatServerApplication
 
 fun main(args: Array<String>) {
-    runApplication<QiniuTestApplication>(*args)
+    runApplication<DisChatServerApplication>(*args)
 }

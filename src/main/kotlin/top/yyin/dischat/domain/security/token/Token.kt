@@ -1,8 +1,8 @@
-package top.yyin.dischat.security.token
+package top.yyin.dischat.domain.security.token
 
-import top.yyin.dischat.service.QiniuCloudService
-import top.yyin.dischat.service.QiniuCloudServiceImpl
-import org.springframework.beans.factory.annotation.Autowired
+import org.springframework.beans.factory.annotation.Value
+import org.springframework.boot.context.properties.ConfigurationProperties
+import org.springframework.stereotype.Component
 
 /**
  * @Author: YinZhihao
@@ -24,9 +24,10 @@ data class TokenClaim(
  * @param expiresIn how long this token is valid
  * @param secret the secret key to sign the token
  */
+@Component
 data class TokenConfig(
-    val issuer: String,
-    val audience: String,
-    val expiresIn: Long,
-    val secret: String
+    @Value("\${jwt.issuer}")var issuer: String,
+    @Value("\${jwt.audience}") var  audience: String,
+    @Value("\${jwt.expireTime}") var expiresIn: Long,
+    @Value("\${jwt.secret}") var secret: String
 )
