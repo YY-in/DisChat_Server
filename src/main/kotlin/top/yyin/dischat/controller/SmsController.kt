@@ -18,9 +18,10 @@ import top.yyin.dischat.service.SmsService
  */
 @Controller
 @RequestMapping("/verification")
-class MessageController(
+class SmsController(
     private val smsService: SmsService
 ){
+
 
     @GetMapping("/phone/{phone}")
     fun getAuthCode(@PathVariable phone: String): ResponseEntity<BaseResponse> {
