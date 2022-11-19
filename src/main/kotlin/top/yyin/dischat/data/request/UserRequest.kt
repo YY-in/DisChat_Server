@@ -39,3 +39,7 @@ data class VerifyCodeRequest(
     val phone: String,
     val code: String,
 )
+data class VerifyEmailCodeRequest(
+    val email: String,
+    val code: String,
+)

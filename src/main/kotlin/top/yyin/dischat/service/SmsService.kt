@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service
 import top.yyin.dischat.configuration.AliyunConfig
 import top.yyin.dischat.data.response.BaseResponse
 import top.yyin.dischat.utils.RedisUtils
-import java.util.*
 import javax.annotation.Resource
 
 
@@ -44,8 +43,6 @@ class SmsService(
     }
     /**
      * 使用AK&SK初始化账号Client
-     * @param accessKeyId
-     * @param accessKeySecret
      * @return Client
      * @throws Exception
      */
@@ -55,7 +52,7 @@ class SmsService(
             .setAccessKeyId(aliyunConfig.accessKeyId) // 必填，您的 AccessKey Secret
             .setAccessKeySecret(aliyunConfig.accessKeySecret)
         // 访问的域名
-        config.endpoint = "dysmsapi.aliyuncs.com"
+        config.endpoint = aliyunConfig.smsEndpoint
         return Client(config)
     }
 
@@ -63,8 +60,8 @@ class SmsService(
     private fun sendMessage(phone: String, code: String): String{
         val client: Client = this.createClient()
         val sendSmsRequest = SendSmsRequest()
-            .setSignName("YYIN")
-            .setTemplateCode("SMS_257842888")
+            .setSignName(aliyunConfig.signName)
+            .setTemplateCode(aliyunConfig.templateCode)
             .setPhoneNumbers(phone)
             .setTemplateParam("{\"code\":\"$code\"}");
         val runtime = RuntimeOptions()
